@@ -119,7 +119,8 @@ let g:indentLine_enabled=0
 "        一种方法是安装 scrooloose/syntastic，这个插件支持无数语言的检查
 "        	cd .vim/bundle
 "        	git clone https://github.com/scrooloose/syntastic
-let g:syntastic_python_checkers=['pyflakes']
+" pyflakes -- checker for python2,  pyflakes3 -- checker for python3
+let g:syntastic_python_checkers=['pyflakes3']
 
 " c 语法检查器配置
 " include 文件的目录
