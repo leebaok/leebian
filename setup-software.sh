@@ -5,7 +5,8 @@ echo "deb http://mirrors.ustc.edu.cn/debian testing main non-free contrib" > /et
 apt-get update
 apt-get dist-upgrade 
 
-apt-get install vim sudo 
+# here we use vim-nox : vim with script option enhanced
+apt-get install vim-nox sudo 
 
 usermod -a -G sudo leebaok
 

@@ -37,10 +37,22 @@ git clone https://github.com/asins/vimcdoc.git
 cd ~/.vim/bundle
 git clone https://github.com/Yggdroot/indentLine
 
-# python syntax check
+# python syntax check and many other syntax checkers 
 sudo apt-get install pyflakes
 cd ~/.vim/bundle
+# scrooloose/syntastic has many many checkers, it is very powerful
 git clone https://github.com/scrooloose/syntastic
+
+# autocomplete: YouCompleteMe
+cd ~/.vim/bundle
+git clone https://github.com/Valloric/YouCompleteMe
+cd YouCompleteMe
+# download third party source 
+git submodule update --init --recursive 
+# compile source code for complete engine
+./install.py
+# now, we have no c language complete engine, if need it ,refer to doc
+
 
 cd $pwd
 

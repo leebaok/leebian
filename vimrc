@@ -112,18 +112,23 @@ let g:indentLine_enabled=0
 " 比如，python 的检查需要依赖 python-flake8 或者 pylint 或者 pyflakes
 " 我们这里用 pyflakes 检查（apt-get install pyflakes）
 " 安装之后，通过下面指令指定检查器
-" 注意： pyflakes是一个PATH路径下的可执行文件，为 /usr/bin/pyflakes
-"        flake8(python-flake8)之前使用过，检查的太严了，烦死了
+" (flake8(python-flake8)之前使用过，检查的太严了，烦死了)
 " 补充： 使用python的语法检查还需要安装vim相关的插件
 "        因为vim默认编译不支持python的插件自动加载（进入vim, :version 查看选项）
 "        一种方法是安装 scrooloose/syntastic，这个插件支持无数语言的检查
 "        	cd .vim/bundle
 "        	git clone https://github.com/scrooloose/syntastic
-" pyflakes -- checker for python2,  pyflakes3 -- checker for python3
-let g:syntastic_python_checkers=['pyflakes3']
+"        不过，现在发现，vim也有支持python的版本，vim-nox
+let g:syntastic_python_checkers=['pyflakes']
 
 " c 语法检查器配置
 " include 文件的目录
 " let g:syntastic_c_include_dirs = ['/usr/include/', '/usr/include/gtk-3.0/']
 
+
+" YouCompleteMe 强大的自动补全插件
+" 要想实现python的自动补全，需要vim 支持python，所以需要安装 vim-nox 版本
+" ycm_auto_trigger 自动打开自动补全，默认为1，关闭可以设置成0
+" 当想在某个文件编辑的时候打开， 可以 :let ycm_auto_trigger=1
+let g:ycm_auto_trigger=1
 
