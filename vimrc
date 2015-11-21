@@ -131,4 +131,11 @@ let g:syntastic_python_checkers=['pyflakes']
 " ycm_auto_trigger 自动打开自动补全，默认为1，关闭可以设置成0
 " 当想在某个文件编辑的时候打开， 可以 :let ycm_auto_trigger=1
 let g:ycm_auto_trigger=1
+" 按 TAB 选补全的时候，有时候上面会出现 vim 的 preview 窗口，会提示一些用法
+" 虽然有帮助作用，但是我不喜欢，可以通过下面的选项关闭
+set completeopt-=preview
+" 如果喜欢提示窗口，就是上面说的 preview，但是想让他自动消失
+" 可以通过下面的两个选项控制
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_insertion=1
 
