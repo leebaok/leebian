@@ -9,8 +9,8 @@ set fencs=utf-8,usc-bom,gb18030,gbk,gb2312,cp936
 " 允许backspace处理indent,eol,start(缩进、行尾、开头)
 set backspace=indent,eol,start
 set autoindent      " 自动缩进
-set ts=4            " 设置 tab 为4个空格
-set sw=4            " 设置缩进为4空格
+set ts=4            " 设置 tab 为4个空格, ts=tapstop
+set sw=4            " 设置缩进为4空格, sw=shiftwidth
 set history=50		"  保存50跳记录
 set ruler		    " 在右下角显示光标所在地方
 set showcmd		    " 在输入命令过程中，显示没有输完的命令
@@ -20,9 +20,18 @@ set showmatch       " 高亮 {[()]} 的匹配
 set hlsearch        " 高亮搜索结果 
 set nu              " 显示行号
 set wrap            " 自动折行，当文本太长时，折行显示
+set tw=1000         " 设置文本宽度，大于该宽度时，自动换行，这里设为 1000，使之不换行，tw=textwidth
 
 syntax enable       " 高亮
 filetype plugin indent on   " 根据文件类型加载插件、缩进、语法检查
+
+" 关于折叠
+" 折叠方式有 manual, indent, expr, syntax, diff, marker
+" 下面设置折叠方式为 indent，根据缩进折叠
+set foldmethod=indent
+" 折叠指令： zc--折叠，zC--嵌套折叠，zo--打开折叠，zO--嵌套打开折叠
+" 打开文件的时候，希望不折叠代码
+set nofoldenable
 
 " 关于备份 
 set backup		" 备份文件
@@ -86,8 +95,10 @@ let g:airline#extensions#tabline#show_buffers = 0
 
 
 " NERD Tree 配置
-" ToDo ： http://vimawesome.com/plugin/the-nerd-tree
+" 在 .vim/bundle 下clone了NERD Tree后，需要在 vim 中  :Helptags 以及 :help NERD_tree.txt
+" 文件浏览器插件，可以通过下面的配置自动打开NERD Tree
 " autocmd vimenter * NERDTree
+" 在 vim 中可以通过 NERDTreeToggle 打开 NERD Tree
 
 " vimcdoc (vim中文文档)安装
 " 	cd .vim/bundle
@@ -103,8 +114,8 @@ let g:airline#extensions#tabline#show_buffers = 0
 " 设置对其线颜色
 " let g:indentLine_color_term=239
 " 设置对其字符,  比如 ¦, ┆, ︙ or │
-" let g:indentLine_char='¦'   
-" 默认关闭对其线，在vim中可以通过 IndentLinesToggle 切换
+let g:indentLine_char='¦'   
+" 在vim中可以通过 IndentLinesToggle 切换 打开/关闭 对齐线
 " 如果要在 vim 中查看 g:indentLine_enabled，输入 let g:indentLine_enabled 就可以了
 let g:indentLine_enabled=0
 
