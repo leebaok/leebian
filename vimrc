@@ -149,4 +149,16 @@ set completeopt-=preview
 " 可以通过下面的两个选项控制
 " let g:ycm_autoclose_preview_window_after_completion=1
 " let g:ycm_autoclose_preview_window_after_insertion=1
+" 指定C/C++的额外配置，可以自动补全C/C++的头文件等信息
+" 需要在 .ycm_extra_conf.py 的flags中添加：
+" '-isystem',
+" '/usr/include',
+" '-isystem',
+" '/usr/include/c++/4.8',
+" '-isystem',
+" '/usr/include',
+" '/usr/include/x86_64-linux-gun/c++',
+" 在 .ycm_extra_conf.py 中默认使用 C++11 标准检查语法，如果需要检查 C 语言，
+" 请把 '-std=c++11' 改成 '-std=c99'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 

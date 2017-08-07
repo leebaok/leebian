@@ -50,8 +50,8 @@ cd YouCompleteMe
 # download third party source 
 git submodule update --init --recursive 
 # compile source code for complete engine
-./install.py
-# now, we have no c language complete engine, if need it ,refer to doc
+# with support for C-family and Golang
+./install.py --clang-completer --gocode-completer
 
 
 cd $pwd
