@@ -53,6 +53,9 @@ git submodule update --init --recursive
 # with support for C-family and Golang
 ./install.py --clang-completer --gocode-completer
 
+# delimitmate: auto complete for quotes, parens, brackets, etc.
+cd ~/.vim/bundle
+git clone https://github.com/raimondi/delimitmate
 
 cd $pwd
 

@@ -45,6 +45,9 @@ set mouse-=a        " 禁用鼠标
 "  set mouse=a
 "endif
 
+" 按 F9 切换成 粘贴 模式，不乱排粘贴内容
+set pastetoggle=<F9>
+
 " 打开文件时，跳转到上次编辑到的地方，除非第一行有标记
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
