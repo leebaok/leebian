@@ -165,3 +165,9 @@ set completeopt-=preview
 " 请把 '-std=c++11' 改成 '-std=c99'
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
+" ctags 使用
+" ctags -R -- create tags
+" ctrl+] -- jump to tag definition
+" g,] -- list tag reference
+" ctrl+t -- go back
+
