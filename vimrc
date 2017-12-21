@@ -73,7 +73,7 @@ execute pathogen#infect()
 " 如果 ls 的配色也使用 solarized，参见：
 " 	https://github.com/seebi/dircolors-solarized
 set t_Co=16 " 指定颜色数目 
-set background=light
+set background=dark
 colorscheme solarized
 " 如果terminal没有使用solarized，那么指定solarized使用256兼容模式
 " let g:solarized_termcolors=256  
@@ -122,6 +122,7 @@ let g:indentLine_char='¦'
 " 如果要在 vim 中查看 g:indentLine_enabled，输入 let g:indentLine_enabled 就可以了
 let g:indentLine_enabled=0
 
+" (目前 YouCompleteMe 也支持语法检查，所以，以下语法检查相关配置就没有必要了)
 " vim 在做语法检查的时候需要依赖一些语法检查器
 " 比如，python 的检查需要依赖 python-flake8 或者 pylint 或者 pyflakes
 " 我们这里用 pyflakes 检查（apt-get install pyflakes）
@@ -133,12 +134,11 @@ let g:indentLine_enabled=0
 "        	cd .vim/bundle
 "        	git clone https://github.com/scrooloose/syntastic
 "        不过，现在发现，vim也有支持python的版本，vim-nox
-let g:syntastic_python_checkers=['pyflakes']
+"let g:syntastic_python_checkers=['pyflakes']
 
 " c 语法检查器配置
 " include 文件的目录
 " let g:syntastic_c_include_dirs = ['/usr/include/', '/usr/include/gtk-3.0/']
-
 
 " YouCompleteMe 强大的自动补全插件
 " 要想实现python的自动补全，需要vim 支持python，所以需要安装 vim-nox 版本
@@ -164,6 +164,11 @@ set completeopt-=preview
 " 在 .ycm_extra_conf.py 中默认使用 C++11 标准检查语法，如果需要检查 C 语言，
 " 请把 '-std=c++11' 改成 '-std=c99'
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" 当前目录的 .ycm_extra_conf.py 和 ycm_global_ycm_extra_conf 都存在的时候，不要让我确认使用哪一个
+" 直接使用当前目录的
+" 如果想让 YouCompleteMe 使用当前目录下的头文件等内容去做语法检查、自动补全，
+" 那么将上面的 ycm_global_ycm_extra_conf 复制一份到当前目录，然后修改配置，比如 -I,-isystem 等
+let g:ycm_confirm_extra_conf=0
 
 " ctags 使用
 " ctags -R -- create tags
