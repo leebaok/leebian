@@ -59,4 +59,8 @@ git clone https://github.com/raimondi/delimitmate
 
 cd $pwd
 
+# vim solarized theme may not work fine in tmux
+# if use tmux, please add below line in .profile or . bashrc:
+#    alias tmux="TERM=screen-256color-bce tmux"
+# this will fix vim color theme in tmux
 
